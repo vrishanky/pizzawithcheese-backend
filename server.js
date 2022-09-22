@@ -2,16 +2,18 @@
 var express = require('express');
 var server = express();
 var bodyParser = require('body-parser');
-var mongoose= require('mongoose');
+var mongoose = require('mongoose');
+var dotenv = require('dotenv');
+dotenv.config();
 
 var userRoutes = require('./routes/user-routes.js');
 var productRoutes = require('./routes/product-routes.js');
 
-//Connect to MongoDB
+// Connect to MongoDB
 var dbURL = process.env.DB_URL;
 
 var dbConfig = {
-    "useNewURLParser": true,
+    "useNewUrlParser": true,
     "useUnifiedTopology": true
 }
 
@@ -23,13 +25,14 @@ mongoose
     }
 )
 .catch(
-    function() {
-        console.log('Database is connected', dbError);
+    function(dbError) {
+        console.log('Database connection error', dbError)
     }
 );
 
+
 // Configure middlewares for express
-var bodyParserConfig = {extened: false};
+var bodyParserConfig = {extended: false};
 server.use( bodyParser.urlencoded(bodyParserConfig) );
 server.use( bodyParser.json() );
 
@@ -42,7 +45,6 @@ server.get(
     }
 );
 
-
 server.use(
     '/users', userRoutes
 );
@@ -51,10 +53,9 @@ server.use(
     '/products', productRoutes
 );
 
-
 // Listen to port number
 server.listen(
-    3001,
+    process.env.PORT,
     function() {
         console.log('Server running at http://localhost:3001/');
     }
