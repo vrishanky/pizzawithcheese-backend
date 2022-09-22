@@ -15,7 +15,8 @@ router.post(
         var newDocument = {
             "firstname": req.body.firstname,
             "lastname": req.body.lastname,
-            "email": req.body.email
+            "email": req.body.email,
+            "password": req.body.password
         };
 
         UserModel
@@ -30,7 +31,7 @@ router.post(
                 console.log(dbError);
                 res.send("Error occured /users/register");
             }
-        )
+        );
     }
 );
 
