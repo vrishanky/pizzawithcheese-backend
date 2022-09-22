@@ -41,7 +41,7 @@ server.use( bodyParser.json() );
 server.get(
     '/',                                        // http://localhost:3001/
     function(req, res) {
-        res.send("<h1>Welcome to the server!</h1>");
+        res.send("<h1>Welcome to my Super APP!</h1>");
     }
 );
 
