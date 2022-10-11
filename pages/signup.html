@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom text-center">Create your Profile with us</h2>
+        <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4">  
+      <form class="form align" action="/signup"
+      method="POST"
+      >
+      <label>
+        Your First Name:
+        <input type="text" name="First Name">
+      </label>
+      <br/>
+      <label>
+        Your Last Name:
+        <input type="text" name="Last Name">
+      </label>
+      <br/>
+      <label>
+        Your email:
+        <input type="email" name="email">
+      </label>
+      <br/>
+      <label>
+        Your password:
+        <input type="email" name="password">
+      </label>
+
+      <br/>
+      <!-- your other form fields go here -->
+      <button type="button" class="btn btn-warning"
+              style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+        Sign Up
+      </button>
+      </form>
+         </div>
+      </div>
+</div>
+</body>
+</html>
